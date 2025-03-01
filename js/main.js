@@ -1,145 +1,45 @@
 
+function checkCompletion() {
+    let remainingTasks = parseInt(document.getElementById('taskAssignedNumber').innerText);
+    if (remainingTasks === 0) {
+        alert("Congratulations! All tasks are completed.");
+    }
+}
 
-document
-    .getElementById('shop-btn')
-    .addEventListener('click', function(event){
+function handleButtonClick(buttonId, titleId) {
+    document.getElementById(buttonId).addEventListener('click', function (event) {
         event.preventDefault();
-        alert("Board Update Successfully")
-        
-        let innerValue= getIdByInnerText('taskAssignedNumber');
-        let sub= innerValue-1;
-        document.getElementById('taskAssignedNumber').innerText= sub;
+        // 1st
+        alert("Board Update Successfully");
+        // 2nd
+        let innerValue = getIdByInnerText('taskAssignedNumber');
+        let sub = innerValue - 1;
+        document.getElementById('taskAssignedNumber').innerText = sub;
 
-        // complete task
-        let completeTask= getIdByInnerText('completeTask');
-        let sum= completeTask+1;
-        document.getElementById('completeTask').innerText= sum;
+        // 3rd
+        let completeTask = getIdByInnerText('completeTask');
+        let sum = completeTask + 1;
+        document.getElementById('completeTask').innerText = sum;
 
-        let innerText= addedValue('title', 'transactionContainer');
+        // container update-4th
+        let innerText = addedValue(titleId, 'transactionContainer');
 
+        this.disabled = true; 
 
-
-        this.disabled= true;
-        
-    })
-
-
-document
-    .getElementById('cloudSync-btn')
-    .addEventListener('click', function(event){
-        event.preventDefault();
-        alert("Board Update Successfully")
-        
-        let innerValue= getIdByInnerText('taskAssignedNumber');
-        let sub= innerValue-1;
-        document.getElementById('taskAssignedNumber').innerText= sub;
-
-        // complete task
-        let completeTask= getIdByInnerText('completeTask');
-        let sum= completeTask+1;
-        document.getElementById('completeTask').innerText= sum;
-        // container
-        let innerText= addedValue('cloud-title','transactionContainer');
+        checkCompletion();
+    });
+}
 
 
-        this.disabled= true;
-        
-    })
+handleButtonClick('shop-btn', 'title');
+handleButtonClick('cloudSync-btn', 'cloud-title');
+handleButtonClick('swiftpay-btn', 'swiftpay-title');
+handleButtonClick('meta-btn', 'meta-title');
+handleButtonClick('google-btn', 'google-title');
+handleButtonClick('rounded-btn', 'rounded-title');
+    
 
 
-
-// 3rd
-document
-    .getElementById('swiftpay-btn')
-    .addEventListener('click', function(event){
-        event.preventDefault();
-        alert("Board Update Successfully")
-        
-        let innerValue= getIdByInnerText('taskAssignedNumber');
-        let sub= innerValue-1;
-        document.getElementById('taskAssignedNumber').innerText= sub;
-
-        // complete task
-        let completeTask= getIdByInnerText('completeTask');
-        let sum= completeTask+1;
-        document.getElementById('completeTask').innerText= sum;
-        // container
-        let innerText= addedValue('swiftpay-title','transactionContainer');
-
-
-        this.disabled= true;
-        
-    })
-
-// 4th
-document
-    .getElementById('meta-btn')
-    .addEventListener('click', function(event){
-        event.preventDefault();
-        alert("Board Update Successfully")
-        
-        let innerValue= getIdByInnerText('taskAssignedNumber');
-        let sub= innerValue-1;
-        document.getElementById('taskAssignedNumber').innerText= sub;
-
-        // complete task
-        let completeTask= getIdByInnerText('completeTask');
-        let sum= completeTask+1;
-        document.getElementById('completeTask').innerText= sum;
-        // container
-        let innerText= addedValue('meta-title','transactionContainer');
-
-
-        this.disabled= true;
-        
-    })
-
-// 5th
-document
-    .getElementById('google-btn')
-    .addEventListener('click', function(event){
-        event.preventDefault();
-        alert("Board Update Successfully")
-        
-        let innerValue= getIdByInnerText('taskAssignedNumber');
-        let sub= innerValue-1;
-        document.getElementById('taskAssignedNumber').innerText= sub;
-
-        // complete task
-        let completeTask= getIdByInnerText('completeTask');
-        let sum= completeTask+1;
-        document.getElementById('completeTask').innerText= sum;
-        // container
-        let innerText= addedValue('google-title','transactionContainer');
-
-
-        this.disabled= true;
-        
-    })
-
-
-// 6th
-document
-    .getElementById('rounded-btn')
-    .addEventListener('click', function(event){
-        event.preventDefault();
-        alert("Board Update Successfully")
-        
-        let innerValue= getIdByInnerText('taskAssignedNumber');
-        let sub= innerValue-1;
-        document.getElementById('taskAssignedNumber').innerText= sub;
-
-        // complete task
-        let completeTask= getIdByInnerText('completeTask');
-        let sum= completeTask+1;
-        document.getElementById('completeTask').innerText= sum;
-        // container
-        let innerText= addedValue('rounded-title','transactionContainer');
-
-
-        this.disabled= true;
-        
-    })
     
 // clear histry
 document
@@ -147,3 +47,5 @@ document
     .addEventListener('click', function(){
         document.getElementById('transactionContainer').innerText= ''
     })
+
+
