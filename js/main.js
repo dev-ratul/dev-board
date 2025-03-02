@@ -21,7 +21,7 @@ function handleButtonClick(buttonId, titleId) {
         let sum = completeTask + 1;
         document.getElementById('completeTask').innerText = sum;
 
-        // container update-4th
+        // container update
         let innerText = addedValue(titleId, 'transactionContainer');
 
         this.disabled = true; 
